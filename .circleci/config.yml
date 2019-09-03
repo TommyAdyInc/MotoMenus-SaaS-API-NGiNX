@@ -14,10 +14,14 @@ jobs:
       - setup_remote_docker
 
       - run:
+          name: Docker version.
+          command: docker version
+
+      - run:
           name: Docker build.
           command: |
             set -x
-            docker build --tag="${CIRCLE_PROJECT_REPONAME}" ./
+            docker build --tag="${CIRCLE_PROJECT_REPONAME,,}" ./
 
       - run:
           name: Docker tag.
