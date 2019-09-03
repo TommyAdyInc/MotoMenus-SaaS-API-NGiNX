@@ -5,6 +5,9 @@ global-environment-variables: &environment-variables
 version: 2.1
 jobs:
   build:
+    environment:
+      <<: *environment-variables
+
     docker:
       - image: docker:19.03.1
 
