@@ -24,7 +24,8 @@ jobs:
           name: Docker tag.
           command: |
             set -x
-            docker tag ${CIRCLE_PROJECT_REPONAME} ${AWS_ECR_URI}/${CIRCLE_PROJECT_REPONAME}:${CIRCLE_BRANCH}
+            LOWERCASE_REPONAME=`echo "${CIRCLE_PROJECT_REPONAME}" | tr '[:upper:]' '[:lower:]'`
+            docker tag ${LOWERCASE_REPONAME} ${AWS_ECR_URI}/${LOWERCASE_REPONAME}:${CIRCLE_BRANCH}
 
       - run:
           name: Install the AWS Command Line Interface (CLI).
