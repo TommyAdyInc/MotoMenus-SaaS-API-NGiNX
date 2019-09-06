@@ -41,7 +41,7 @@ jobs:
   aws-cli-job:
     executor: aws-cli/default
     steps:
-      - aws-cli/configure
+      - aws-cli/setup
 
 workflows:
   version: 2
