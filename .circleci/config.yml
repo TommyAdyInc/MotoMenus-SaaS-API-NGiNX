@@ -1,4 +1,13 @@
 version: 2.1
+commands:
+  sayhello:
+    description: "A very simple command for demonstration purposes"
+    parameters:
+      to:
+        type: string
+        default: "Hello World"
+    steps:
+      - run: echo << parameters.to >>
 orbs:
   aws-ecr: circleci/aws-ecr@6.2.0
 #   aws-cli: circleci/aws-cli@0.1.16
@@ -51,4 +60,4 @@ workflows:
               only:
                 - master
           region: ${AWS_DEFAULT_REGION}
-          repo: `echo "${CIRCLE_PROJECT_REPONAME}" | tr '[:upper:]' '[:lower:]'`
+          repo: ${CIRCLE_PROJECT_REPONAME}
