@@ -1,53 +1,6 @@
 version: 2.1
-commands:
-  sayhello:
-    description: "A very simple command for demonstration purposes"
-    parameters:
-      to:
-        type: string
-        default: "Hello World"
-    steps:
-      - run: echo << parameters.to >>
 orbs:
   aws-ecr: circleci/aws-ecr@6.2.0
-#   aws-cli: circleci/aws-cli@0.1.16
-# jobs:
-  # docker-build-job:
-  #   docker:
-  #     - image: docker:19.03.1
-
-  #   steps:
-  #     - checkout
-
-  #     - setup_remote_docker
-
-  #     - run:
-  #         name: Docker build.
-  #         command: |
-  #           set -x
-  #           LOWERCASE_REPONAME=`echo "${CIRCLE_PROJECT_REPONAME}" | tr '[:upper:]' '[:lower:]'`
-  #           docker build --tag="${LOWERCASE_REPONAME}" ./
-
-  #     - run:
-  #         name: Docker tag.
-  #         command: |
-  #           set -x
-  #           LOWERCASE_REPONAME=`echo "${CIRCLE_PROJECT_REPONAME}" | tr '[:upper:]' '[:lower:]'`
-  #           docker tag ${LOWERCASE_REPONAME} ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${LOWERCASE_REPONAME}:${CIRCLE_BRANCH}
-
-  #     - deploy:
-  #         name: Get Docker login from ECR and then run the Docker login command.
-  #         command: |
-  #           DOCKER_LOGIN_CMD=`aws ecr get-login --no-include-email`
-  #           ${DOCKER_LOGIN_CMD}
-
-  #     - deploy:
-  #         name: Docker push.
-  #         command: |
-  #           set -x
-  #           LOWERCASE_REPONAME=`echo "${CIRCLE_PROJECT_REPONAME}" | tr '[:upper:]' '[:lower:]'`
-  #           docker push ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${LOWERCASE_REPONAME}:${CIRCLE_BRANCH}
-
 workflows:
   version: 2
   main-workflow:
