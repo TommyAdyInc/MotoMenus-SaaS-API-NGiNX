@@ -3,9 +3,6 @@ orbs:
   aws-cli: circleci/aws-cli@0.1.16
 jobs:
   docker-build-job:
-    environment:
-      <<: *environment-variables
-
     docker:
       - image: docker:19.03.1
 
