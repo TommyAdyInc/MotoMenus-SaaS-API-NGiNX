@@ -50,4 +50,5 @@ workflows:
             branches:
               only:
                 - master
-          repo: myECRRepository
+          region: ${AWS_DEFAULT_REGION}
+          repo: `echo "${CIRCLE_PROJECT_REPONAME}" | tr '[:upper:]' '[:lower:]'`
