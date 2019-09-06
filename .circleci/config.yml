@@ -48,6 +48,7 @@ workflows:
   main-workflow:
     jobs:
       - docker-build-job:
+          context: AWS iam-user-circleci
           filters:
             branches:
               only:
