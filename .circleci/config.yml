@@ -60,4 +60,4 @@ workflows:
               only:
                 - master
           region: AWS_DEFAULT_REGION
-          repo: ${CIRCLE_PROJECT_REPONAME}
+          repo: $CIRCLE_PROJECT_REPONAME | tr [:upper:] [:lower:]
