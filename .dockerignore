@@ -1,4 +1,6 @@
 .circleci
+.idea
+.vscode
 .git
 
 .dockerignore
